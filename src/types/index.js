@@ -1,0 +1,2 @@
+export const CREAR_HORA = 'CREAR_HORA';
+export const OBTENER_AGENDAS = 'OBTENER_AGENDAS';
