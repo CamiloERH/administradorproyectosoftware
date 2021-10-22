@@ -1,6 +1,6 @@
 import { OBTENER_AGENDAS } from "../../types";
 
-const authReducer = (state, action) => {
+const horasReducer = (state, action) => {
     switch(action.type){
         case OBTENER_AGENDAS:
             return {
@@ -12,4 +12,4 @@ const authReducer = (state, action) => {
     }
 }
 
-export default authReducer;
+export default horasReducer;

@@ -47,7 +47,7 @@ export const Header = () => {
                             sx={{marginLeft: 'auto', paddingX: 5}}
                         >
                             <Tab 
-                                component={Link} to="/" 
+                                component={Link} to="/home" 
                                 label="Home"
                                 sx={tabStyle}
                             />

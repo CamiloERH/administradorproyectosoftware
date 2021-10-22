@@ -1,21 +1,19 @@
 import React, { useReducer } from 'react';
 
+import { OBTENER_AGENDAS } from '../../types';
+
 import HorasContext from './horasContext';
 import horasReducer from './horasReducer';
 
-import { OBTENER_AGENDAS } from '../../types';
-
 import clienteAxios from '../../config/axios';
 
-const HoraState = (props) => {
+const HorasState = (props) => {
 
     const initialState = {
         agendas: []
     }
     
     const [state, dispatch] = useReducer(horasReducer, initialState)
-
-
 
     const crearHora = async (hora) => {
 
@@ -64,4 +62,4 @@ const HoraState = (props) => {
     );
 }
 
-export default HoraState;
+export default HorasState;

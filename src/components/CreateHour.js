@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
 
-import HorasContext from '../context/horas/horasContext';
+import horasContext from '../context/horas/horasContext';
+import serviciosContext from '../context/servicios/serviciosContext';
 
 import { Container, 
     TextField, 
-    Grid, 
+    Stack, 
     Paper, 
     Select, 
     InputLabel, 
@@ -20,10 +21,12 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 
+
 const CreateHour = () => {
 
-    const horasContext = useContext(HorasContext);
-    const { crearHora } = horasContext;
+    const { servicios } = useContext(serviciosContext)
+
+    const { crearHora } = useContext(horasContext);
 
     const [form, setForm] = useState({
         fecha: new Date(),
@@ -42,23 +45,18 @@ const CreateHour = () => {
     }
 
     return (  
+        
         <Container 
             component={Paper} 
             elevation={5}
             sx={{
                 padding: 5, 
-                marginY: 5, 
-                display: 'flex', 
-                justifyContent: 'center'
+                marginY: 5
             }}
             maxWidth="sm"
         >
-            <Grid 
-                container 
-                spacing={0} 
-                direction="column"
-                justifyContent="center" 
-                alignItems="center"
+            <Stack
+                sx={{alignItems: 'center'}}
             >
                 <Typography variant="h5" gutterBottom component="div">
                    Crear Hora
@@ -80,21 +78,28 @@ const CreateHour = () => {
                     </LocalizationProvider>
                 </FormControl>
                 <FormControl sx={{ m: 1, minWidth: 250 }}>
-                    <InputLabel id="select-helper-label">Servicio</InputLabel>
+                    <InputLabel id="select-servicio-label">Servicio</InputLabel>
                     <Select
                         name="idServicio"
-                        id="demo-simple-select-helper"
-                        labelId="select-helper-label"
+                        labelId="select-servicio-label"
                         value={form.idServicio}
                         label="Servicio"
                         onChange={handleChange}
                     >
-                        <MenuItem value="61515feeaca56c4e1425c0a2">Servicio 1</MenuItem>
-                        <MenuItem value="61516072aca56c4e1425c0a4">Servicio 2</MenuItem>
-                        <MenuItem value="6151609cedf29a166dd7e94c">Servicio 3</MenuItem>
+                        {
+                            servicios.map( (servicio) => (
+                                <MenuItem
+                                    key={servicio._id}
+                                    value={servicio._id}
+                                >
+                                    {servicio.nombre}
+                                </MenuItem>
+                            ))
+                        }
                     </Select>
                     <FormHelperText>Escoger un servicio</FormHelperText>
                 </FormControl>
+                
                 <Button 
                     sx={{m: 2}} 
                     variant="contained" 
@@ -103,8 +108,12 @@ const CreateHour = () => {
                 >
                     Crear Hora
                 </Button>
-            </Grid>
+            </Stack>
+
+            
         </Container>
+
+       
     );
 }
  

@@ -12,6 +12,11 @@ import { Container,
 
 import HorasContext from '../context/horas/horasContext';
 
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+
+
+
 const ScheduledHours = () => {
 
     const horasContext = useContext(HorasContext)
@@ -63,7 +68,7 @@ const ScheduledHours = () => {
                                 </TableCell>
                                 <TableCell align="right">{row.idCliente.apellido}</TableCell>
                                 <TableCell align="right">{row.idHora.idServicio.nombre}</TableCell>
-                                <TableCell align="right">{row.idHora.fecha}</TableCell>
+                                <TableCell align="right">{ format(new Date(row.idHora.fecha), 'PP', {locale: es})}</TableCell>
                             </TableRow>
                         ))}
                         </TableBody>
