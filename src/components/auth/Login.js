@@ -1,9 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 
-import { Alert, Button, Grid, Stack, TextField, Typography, Fade } from "@mui/material";
+import { Alert, Button, Grid, Stack, TextField, Fade } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
-
-import { Link } from 'react-router-dom';
 
 import AuthContext from '../../context/autenticacion/authContext';
 import alertaContext from '../../context/alertas/alertaContext';
@@ -99,7 +97,7 @@ const Login = (props) => {
                 >
                     Ingresar
                 </Button>
-                <Stack mt={2} direction="row" spacing={2}>
+                {/* <Stack mt={2} direction="row" spacing={2}>
                     <Typography sx={{my: 'auto'}} variant="overline" gutterBottom>
                         ¿No estas registrado?
                     </Typography>
@@ -109,7 +107,7 @@ const Login = (props) => {
                     >
                         Registrarse
                     </Button>   
-                </Stack> 
+                </Stack>  */}
             </Stack> 
         </Grid>
  

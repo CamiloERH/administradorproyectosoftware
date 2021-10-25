@@ -53,7 +53,7 @@ const CreateHour = () => {
                 padding: 5, 
                 marginY: 5
             }}
-            maxWidth="sm"
+            maxWidth="xs"
         >
             <Stack
                 sx={{alignItems: 'center'}}
@@ -61,7 +61,10 @@ const CreateHour = () => {
                 <Typography variant="h5" gutterBottom component="div">
                    Crear Hora
                 </Typography>
-                <FormControl sx={{ m: 1, minWidth: 250 }}>
+                <FormControl 
+                    sx={{ m: 1, minWidth: 250 }} 
+                    fullWidth
+                >
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <DateTimePicker
                             name="date"
@@ -77,7 +80,10 @@ const CreateHour = () => {
                         />
                     </LocalizationProvider>
                 </FormControl>
-                <FormControl sx={{ m: 1, minWidth: 250 }}>
+                <FormControl 
+                    sx={{ m: 1, minWidth: 250 }}
+                    fullWidth
+                >
                     <InputLabel id="select-servicio-label">Servicio</InputLabel>
                     <Select
                         name="idServicio"
@@ -101,7 +107,8 @@ const CreateHour = () => {
                 </FormControl>
                 
                 <Button 
-                    sx={{m: 2}} 
+                    fullWidth
+                    sx={{m: 2, p: 1}} 
                     variant="contained" 
                     endIcon={<SendIcon />}
                     onClick={handleSubmit}
@@ -109,8 +116,6 @@ const CreateHour = () => {
                     Crear Hora
                 </Button>
             </Stack>
-
-            
         </Container>
 
        
