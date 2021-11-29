@@ -11,7 +11,7 @@ const ProductosState = (props) => {
         productos: []
     }
 
-    const [state, dispatch] = useReducer(productosReducer, initialState)
+    const [state] = useReducer(productosReducer, initialState)
 
     const crearProducto = async (producto) => {
 
