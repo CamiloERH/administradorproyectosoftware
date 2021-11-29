@@ -64,6 +64,11 @@ export const Header = () => {
                                 sx={tabStyle}
                             />
                             <Tab 
+                                component={Link} to="/createproduct" 
+                                label="Crear Producto"
+                                sx={tabStyle}
+                            />
+                            <Tab 
                                 component={Link} to="/scheduledhours" 
                                 label="Horas Agendadas"
                                 sx={tabStyle}

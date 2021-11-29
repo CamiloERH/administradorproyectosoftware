@@ -54,7 +54,6 @@ const Login = (props) => {
             justifyContent="center"
             alignItems="center"
             direction="column"
-            sx={{p: 0, m: 0, height: '98vh'}}
         >
             <Fade in={Boolean(alerta)} timeout={250}
                 sx={{width: {xs: '90%', sm: '80', md: '25%', }}}
