@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 
 import ProductosContext from './productosContext';
 import productosReducer from './productosReducer';
@@ -8,7 +8,7 @@ import clienteAxios from '../../config/axios';
 const ProductosState = (props) => { 
 
     const initialState = {
-        
+        productos: []
     }
 
     const [state, dispatch] = useReducer(productosReducer, initialState)
@@ -17,7 +17,6 @@ const ProductosState = (props) => {
 
         const resultado = await clienteAxios.post(`/api/productos`, producto);
         console.log(resultado);
-
         // dispatch({
         //     type: CREAR_PRODUCTO
         // });
@@ -26,6 +25,7 @@ const ProductosState = (props) => {
     return (
         <ProductosContext.Provider
             value={{
+                productos: state.productos,
                 crearProducto
             }}
         >

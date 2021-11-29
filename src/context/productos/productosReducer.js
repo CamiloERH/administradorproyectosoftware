@@ -1,4 +1,4 @@
-import { CREAR_PRODUCTO } from "../../types";
+// import { CREAR_PRODUCTO } from "../../types";
 
 const productosReducer = (state, action) => {
     switch(action.type){
